@@ -51,5 +51,32 @@ namespace DSA.BinaryTrees
             }
           return root;
         }
+        public void displayBT(BT_Node node)
+        {
+            if (node == null)
+                return;
+            string rootNode = node.data.ToString();
+            string leftNodeVal = "";
+            string rightNodeVal = "";
+            if (node.left != null)
+            {
+                leftNodeVal = node.left.data.ToString();
+            }
+            else
+            {
+                leftNodeVal = ".";
+            }
+            if (node.right != null)
+            {
+                rightNodeVal = node.right.data.ToString();
+            }
+            else
+                rightNodeVal = ".";
+            string fr = leftNodeVal + "-" + rootNode + "-" + rightNodeVal;
+            Console.WriteLine(fr);
+
+            displayBT(node.left);
+            displayBT(node.right);
+        }
     }
 }

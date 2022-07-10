@@ -12,6 +12,7 @@ namespace DSA
             int [] arr = new int[]{50,25,12,-1,-1,37,30,-1,-1,-1,75,62,-1,70,-1,-1,87,-1,-1};
             BinaryTree bt = new BinaryTree();
             BT_Node nd = bt.constructBT(arr);
+            bt.displayBT(nd);
             Console.WriteLine("Hello World!");
         }
     }
