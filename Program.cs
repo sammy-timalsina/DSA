@@ -13,6 +13,10 @@ namespace DSA
             BinaryTree bt = new BinaryTree();
             BT_Node nd = bt.constructBT(arr);
             bt.displayBT(nd);
+            int x = bt.sizeOfABT(nd);   
+            int sumOFAllNodes = bt.sumOFaBT(nd);
+            int maxOFNodes = bt.maxOfaBT(nd);
+            int heightOFABT = bt.heightOfABT(nd);
             Console.WriteLine("Hello World!");
         }
     }

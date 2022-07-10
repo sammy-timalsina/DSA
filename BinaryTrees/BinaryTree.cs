@@ -78,5 +78,40 @@ namespace DSA.BinaryTrees
             displayBT(node.left);
             displayBT(node.right);
         }
+        public int sizeOfABT(BT_Node node)
+        {
+            if(node == null)
+            {
+                return 0;
+            }           
+            return 1+ sizeOfABT(node.left) +sizeOfABT(node.right);           
+        }
+        public int sumOFaBT(BT_Node node)
+        {
+
+            if (node == null)
+                return 0;
+            return node.data + sumOFaBT(node.left) + sumOFaBT(node.right);
+        }
+        public int maxOfaBT(BT_Node node)
+        {
+            if( node == null)
+            {
+                return int.MinValue;
+            }          
+            int leftMax = maxOfaBT(node.left);
+            int rightMax = maxOfaBT(node.right);    
+            int max = Math.Max(leftMax, rightMax);
+            max = Math.Max(node.data, max);
+            return max;
+        }
+        public int heightOfABT(BT_Node node)
+        {
+            if (node == null)
+                return -1;
+            int leftHt = heightOfABT(node.left);
+            int rightHt = heightOfABT(node.right);
+            return 1+ Math.Max(leftHt,rightHt);
+        }
     }
 }
